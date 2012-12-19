@@ -1,9 +1,7 @@
-countdown (v.0.1)
+Countdown w/ Transitions (v.0.1)
 =========
 Last Update: DEC/19/2012 16:30EST
 
-With Transitions (sort of)
-=========
 Countdown Timer using a specified end date. 
 
 The current configuration of the timer can be adjusted in the file on line 3  'ny.scriptv2.js'.
