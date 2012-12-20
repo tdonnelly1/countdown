@@ -17,17 +17,19 @@ $(function(){
     var minutes = Math.floor(seconds / 60);
     var hours = Math.floor(minutes / 60);
     var days = Math.floor(hours / 24);
-        
+    var lastStepCompleted = 0;
     $('#countdown').countdown({
         timestamp   : end,
-        callback    : function(days, hours, minutes, seconds){
+        callback    : function(days, hours, minutes, seconds, lastStepCompleted){
 
-  if (hours >= 1 ) { // Action at more than an Hour
+  if (hours >= 1 && lastStepCompleted == 0) { // Action at more than an Hour
                     $('#imageBox').addClass('state1'); 
+            lastStepCompleted++;
             }
-            else if (hours <= 1 && minutes >= 45) { // Action at more than 45min
+            else if (hours <= 1 && minutes >= 45 && lastStepCompleted == 1) { // Action at more than 45min
                    $('#imageBox').addClass('state2'); 
-                }
+                   lastStepCompleted++;
+                } roughly what you need to do
             else if (hours <= 1 && minutes  >= 30){  // Action at more than 30min
                      $('#imageBox').addClass('state3'); 
                 }
